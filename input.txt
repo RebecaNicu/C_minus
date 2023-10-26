@@ -1,0 +1,25 @@
+27+15;
+else
+return;
+2/3
+4<7
+<=
+54>=54
+>
+==
+=
+3!=5
+4,5
+[]
+()
+{}
+fsecAAAA dsv
+AAA
+5 5 
+l0l4_
+re_42we re_42we
+453
+/*Acesta este un comentariu*/
+==
+
+
