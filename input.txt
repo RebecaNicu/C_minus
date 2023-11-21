@@ -1,25 +1,16 @@
-27+15;
+int gcd ( int u, int v )
+{
+if ( v == 0 )
+return u ;
 else
-return;
-2/3
-4<7
-<=
-54>=54
->
-==
-=
-3!=5
-4,5
-[]
-()
-{}
-fsecAAAA dsv
-AAA
-5 5 
-l0l4_
-re_42we re_42we
-453
-/*Acesta este un comentariu*/
-==
-
-
+return gcd (v, u-u/v*v) ;
+/* u-u/v*v == u mod v */
+}
+void main(void)
+{
+int x;
+int y;
+x = input();
+y = input();
+output(gcd(x,y));
+}

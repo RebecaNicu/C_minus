@@ -9,9 +9,9 @@ import java_cup.runtime.*;
 class Driver {
 
 	public static void main(String[] args) throws Exception {
-		//Parser parser = new Parser();
-		//parser.parse();
-		ComplexSymbolFactory f = new ComplexSymbolFactory();
+		Parser parser = new Parser();
+		parser.debug_parse();
+		/*ComplexSymbolFactory f = new ComplexSymbolFactory();
 		  //symbolFactory = f;
 		  File file = new File("input.txt");
 		  FileInputStream fis = null;
@@ -26,7 +26,7 @@ class Driver {
           do {
         	  symbol = lexer.next_token();
         	  System.out.println("Symbol -> " + symbol);
-          }while(symbol.sym != sym.EOF);
+          }while(symbol.sym != sym.EOF);*/
 	}
 	
 }

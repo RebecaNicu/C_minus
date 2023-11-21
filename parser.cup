@@ -37,6 +37,16 @@ terminal Integer    NUM;        // our scanner provides numbers as integers
 /* Non terminals */
 non terminal            expr_list;
 non terminal Integer    expr;      // used to store evaluated subexpressions
+non terminal program;
+non terminal declaration_list;
+non terminal declaration;
+non terminal var_declaration;
+non terminal fun_declaration;
+non terminal type_specifier;
+non terminal params;
+non terminal param_list;
+non terminal compound_stmt;
+non terminal param; 
 
 /* Precedences */
 precedence left PLUS, MINUS;
@@ -44,6 +54,36 @@ precedence left TIMES;
 precedence left UMINUS;
 
 /* The grammar rules */
+
+/*program ::= declaration_list {: System.out.println("Program"); :}
+         ;
+         
+declaration_list ::= declaration_list declaration {: System.out.println("Declaration List"); :}
+                 | declaration
+                 ; 
+                 
+declaration ::= var_declaration {: System.out.println("Declaration"); :}
+             | fun_declaration
+             ;
+                 
+var_declaration ::= type_specifier ID SEMI {: System.out.println("Var Declaration"); :}
+                | type_specifier ID LSQPAR NUM RSQPAR SEMI
+                ;
+
+type_specifier ::= INT {: System.out.println("Type Specifier"); :}
+               | VOID
+               ;
+
+fun_declaration ::= type_specifier ID LPAREN params RPAREN compound_stmt {: System.out.println("Fun Declaration"); :}
+                ;
+
+params ::= param_list {: System.out.println("Params"); :}
+        | VOID
+        ;
+
+param_list ::= param_list COMMA param {: System.out.println("Param List"); :}
+            | param
+            ;*/
 expr_list ::= expr_list expr:e SEMI         {: System.out.println(e); :}
             | expr:e SEMI                   {: System.out.println(e); :}
             ;
@@ -56,4 +96,4 @@ expr      ::= expr:e1 PLUS  expr:e2         {: RESULT = e1+e2;        :}
              | LPAREN expr:e RPAREN	         {: RESULT = e;           :}
              | NUM:n	                     {: RESULT = n;           :}
              ;
-       
+  
